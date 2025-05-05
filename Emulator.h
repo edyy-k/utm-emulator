@@ -5,6 +5,8 @@
 
 typedef unsigned int uint;
 
+extern const uint ACCEPTED_STATE;
+
 class Emulator
 {
 private:
@@ -16,6 +18,7 @@ public:
     Emulator(UniversalTM *utm) : universalTM(utm), amountSteps(0) {};
     void run(bool stepMode = false);
     uint getAmountSteps();
+    bool isAccepted();
 };
 
 #endif

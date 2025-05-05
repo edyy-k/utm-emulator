@@ -4,6 +4,8 @@
 #include <chrono>
 #include <thread>
 
+extern const uint ACCEPTED_STATE = 2;
+
 void Emulator::printStep()
 {
     universalTM->printTape();
@@ -62,4 +64,9 @@ void Emulator::run(bool stepMode)
 uint Emulator::getAmountSteps()
 {
     return amountSteps;
+}
+
+bool Emulator::isAccepted()
+{
+    return (universalTM->getCurrentState() == ACCEPTED_STATE);
 }

@@ -35,6 +35,6 @@ int main(int argc, char *argv[])
             std::cout << "\nSTEP " << emulator.getAmountSteps();
         }
 
-        std::cout << "\n\n";
+        std::cout << "\n> " << (emulator.isAccepted() ? "ACCEPTED" : "REJECTED") << "\n\n";
     }
 }
