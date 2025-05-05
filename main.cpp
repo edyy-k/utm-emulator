@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <regex>
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +22,11 @@ int main(int argc, char *argv[])
     {
         std::cout << std::endl;
 
-        // TODO: check if line is a binary code
+        if (!std::regex_match(line, std::regex("^[01]+$")))
+        {
+            std::cerr << "Error: invalid input\n";
+            std::exit(EXIT_FAILURE);
+        }
 
         UniversalTM universalTM;
         universalTM.initialize(line);
