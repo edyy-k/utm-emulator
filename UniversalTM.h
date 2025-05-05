@@ -30,8 +30,6 @@ private:
     size_t head;
     uint currentState;
     std::vector<Transition> transitions;
-    // void getSymbol(size_t zeroCount);
-    // void getDirection(size_t zeroCount);
     void parseTransition(const std::string &code);
 
 public:

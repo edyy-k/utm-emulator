@@ -1,10 +1,24 @@
 #include "Emulator.h"
 
 #include <iostream>
+#include <chrono>
+#include <thread>
 
-void Emulator::run()
+void Emulator::printStep()
+{
+    universalTM->printTape();
+    std::cout << "\n\rSTEP " << getAmountSteps() << std::flush;
+    std::this_thread::sleep_for(std::chrono::milliseconds(700));
+}
+
+void Emulator::run(bool stepMode)
 {
     std::vector<Transition> transitions = universalTM->getTransitions();
+
+    if (stepMode)
+    {
+        printStep();
+    }
 
     bool deadEnd = true;
     do
@@ -30,8 +44,22 @@ void Emulator::run()
             }
 
             universalTM->setCurrentState(t.nextState);
+            amountSteps++;
             deadEnd = false;
+
+            if (stepMode)
+            {
+                // move cursor two lines up
+                std::cout << "\033[2A";
+                printStep();
+            }
+
             break;
         }
     } while (!deadEnd);
+}
+
+uint Emulator::getAmountSteps()
+{
+    return amountSteps;
 }

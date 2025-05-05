@@ -54,6 +54,7 @@ void UniversalTM::initialize(const std::string &input)
 
 void UniversalTM::printTape()
 {
+    std::cout << "\r";
     for (int i = 0; i < tape.size(); i++)
     {
         if (head == i)
@@ -62,14 +63,12 @@ void UniversalTM::printTape()
         }
         std::cout << ' ';
     }
-
     std::cout << std::endl;
 
     for (char c : tape)
     {
         std::cout << c;
     }
-    std::cout << std::endl;
 }
 
 char UniversalTM::read()
