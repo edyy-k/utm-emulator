@@ -10,7 +10,7 @@ void Emulator::printStep()
 {
     universalTM->printTape();
     std::cout << "\n\rSTEP " << getAmountSteps() << std::flush;
-    std::this_thread::sleep_for(std::chrono::milliseconds(700));
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
 }
 
 void Emulator::run(bool stepMode)
