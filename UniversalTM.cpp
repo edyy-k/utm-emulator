@@ -3,7 +3,7 @@
 #include <sstream>
 #include <iostream>
 
-const std::vector<char> SYMBOL_MAP = {'0', '1', '_'};
+const std::vector<char> SYMBOL_MAP = {'0', '1', '_', 'X', 'Y'};
 const std::vector<Direction> DIRECTION_MAP = {Direction::Left, Direction::Right};
 
 void UniversalTM::parseTransition(const std::string &code)
