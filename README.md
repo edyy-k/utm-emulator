@@ -6,7 +6,7 @@ More in-depth details can be found here: https://universal-turing-machine.ch/
 
 # Quick start
 
-=> Assumption: Compiled to `/main`
+**Assumption:** Compiled to `/main`
 
 `test-tms.txt` contains an UTM for each line.\
 `square-tm.txt` contains an UTM that can square a number (`n^2`).
